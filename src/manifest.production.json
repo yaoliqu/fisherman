@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "fishermen",
+  "description": "a wage slave fishing tools",
+  "version": "0.0.1",
+  "options_page": "options.html",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "fishermen",
+    "default_icon": "assets/icon48.png"
+  },
+  "permissions": ["storage", "notifications", "http://*/*", "https://*/*"],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false 
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": [
+      "js/content.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
