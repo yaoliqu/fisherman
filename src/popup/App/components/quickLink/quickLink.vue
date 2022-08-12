@@ -66,7 +66,9 @@ export default {
         link: [
           { required: true, message: '请输入', trigger: 'none' },
           {
-            pattern: /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/,
+            pattern:
+              // eslint-disable-next-line
+              /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/,
             message: '这是什么鸡儿~',
             trigger: 'none',
           },
