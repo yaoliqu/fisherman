@@ -6,7 +6,7 @@
           <TodoList />
           <quickLink />
         </el-tab-pane>
-        <el-tab-pane label="勿点" name="second">
+        <el-tab-pane label="别来沾边" name="second">
           <FishPage></FishPage>
         </el-tab-pane>
       </el-tabs>

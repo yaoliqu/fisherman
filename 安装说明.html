@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>安装说明</title>
+  </head>
+  <style>
+    .container {
+      width: 75%;
+      margin: 0 auto;
+      padding: 36px 0;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 id="fisherman">fisherman</h1>
+      <blockquote>
+        <p>
+          一个利用摸鱼时间搬来抄去写的谷歌浏览器摸鱼插件，一起做职场反骨仔，有想法欢迎issue，有github就给我骗个start吧
+        </p>
+      </blockquote>
+      <h2 id="安装步骤">安装步骤</h2>
+      <p>在谷歌浏览器中打开链接 chrome://extensions/</p>
+      <p>打开开发者模式，加载已解压的扩展程序</p>
+      <p>选择 dist 文件夹导入就可以了</p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo7.jpg"
+          alt="demo7.jpg"
+        />
+      </p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo8.jpg"
+          alt="demo8.jpg"
+        />
+      </p>
+      <h2 id="安装问题">安装问题</h2>
+      <p>目前只在chrome浏览器调试运行，其他浏览器没试过兼容测试</p>
+      <p>
+        安装后插件下方会出现一个错误，这个错误可以忽略，原因是当前版本是基于
+        &quot;manifest_version&quot;: 2
+        去开发的，而谷歌会在2023年停止对2版本的维护，这个不影响插件的使用
+      </p>
+      <p>下班提醒和点餐提醒需要浏览器开启权限</p>
+      <p>具体步骤：</p>
+      <ol>
+        <li>mac</li>
+      </ol>
+      <p>
+        在浏览器地址栏输入 chrome://flags 搜索：notifications
+        设置为disable，重启浏览器生效
+      </p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo6.jpg"
+          alt="demo6.jpg"
+        />
+      </p>
+      <ol start="2">
+        <li>
+          <p>window</p>
+          <p>
+            <a
+              href="https://blog.csdn.net/laughing_cui/article/details/104835196/"
+              >https://blog.csdn.net/laughing_cui/article/details/104835196/</a
+            >
+          </p>
+        </li>
+      </ol>
+      <h2 id="插件默认值">插件默认值</h2>
+      <ol>
+        <li>考勤时间默认为 9:00-18:00</li>
+        <li>发薪日默认为每月 10 号</li>
+        <li>工作制默认为双休</li>
+        <li>点餐提醒默认值为空，也就是不提醒</li>
+        <li>模式默认隐藏模式</li>
+        <li>目前节假日只支持到2023年1月1日，后续会加入自定义配置</li>
+      </ol>
+      <h2 id="功能">功能</h2>
+      <ul>
+        <li>[√] todolist 任务栏工具</li>
+        <li>[√] 下班时间，周末，发薪日，法定节假日倒计时</li>
+        <li>[√] 下班时间，周末，发薪日，法定节假日倒计时</li>
+        <li>[√] 考勤时间可配置</li>
+        <li>[√] 发薪日可配置</li>
+        <li>[√] 点餐提醒可配置</li>
+        <li>[√] 下班时，桌面弹窗提醒</li>
+        <li>[√] 支持双休，大小周，单休工作制配置</li>
+        <li><input disabled="" type="checkbox" /> 法定节假日配置</li>
+      </ul>
+      <h2 id="效果展示">效果展示</h2>
+      <h3 id="页面">页面</h3>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo1.jpg"
+          alt="demo1.jpg"
+        />
+      </p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo2.jpg"
+          alt="demo2.jpg"
+        />
+      </p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo3.jpg"
+          alt="demo3.jpg"
+        />
+      </p>
+      <h3 id="设置">设置</h3>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo4.jpg"
+          alt="demo4.jpg"
+        />
+      </p>
+      <h3 id="通知">通知</h3>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo5.jpg"
+          alt="demo5.jpg"
+        />
+      </p>
+      <h3 id="github地址--yaoliqufisherman">
+        github地址
+        <a href="https://github.com/yaoliqu/fisherman">yaoliqu/fisherman</a>
+      </h3>
+    </div>
+  </body>
+</html>
