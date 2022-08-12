@@ -32,30 +32,36 @@ yarn build-watch
 6. 法定节假日信息需要在 src/holiday.js 文件中配置
 
 ## 功能
-- [√] todolist 任务栏工具
-- [√] 添加链接 快捷工具
-- [√] 下班时间，周末，发薪日，法定节假日倒计时
-- [√] 下班时间，周末，发薪日，法定节假日倒计时
-- [√] 考勤时间可配置
-- [√] 发薪日可配置
-- [√] 点餐提醒可配置
-- [√] 下班时，桌面弹窗提醒
-- [√] 支持双休，大小周，单休工作制配置
-- [x] 法定节假日可配置
+- [x] todolist 任务栏工具
+- [x] 添加链接 快捷工具
+- [x] 下班时间，周末，发薪日，法定节假日倒计时
+- [x] 下班时间，周末，发薪日，法定节假日倒计时
+- [x] 考勤时间可配置
+- [x] 发薪日可配置
+- [x] 点餐提醒可配置
+- [x] 下班时，桌面弹窗提醒
+- [x] 支持双休，大小周，单休工作制配置
+- [ ] 法定节假日可配置
 
 
 ## 效果展示
 
 ### 页面
 
+![demo1.jpg](https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo1.jpg)
+
+![demo2.jpg](https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo2.jpg)
+
+![demo3.jpg](https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo3.jpg)
+
 ### 设置
 
-
+![demo4.jpg](https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo4.jpg)
 
 
 ### 通知
 
-![demo3.png](https://gitee.com/GaoWeiQiang1996/go-home-vue/raw/master/src/assets/demo3.png)
+![demo5.jpg](https://raw.githubusercontent.com/yaoliqu/fisherman/master/src/assets/demo5.jpg)
 
 
 ### 参考自  [GaoWeiQiang1996/go-home-vue](https://gitee.com/GaoWeiQiang1996/go-home-vue)
