@@ -5,24 +5,18 @@
         <el-tab-pane label="生产工具" name="first">
           <TodoList />
           <quickLink />
-          </el-tab-pane>
+        </el-tab-pane>
         <el-tab-pane label="勿点" name="second">
           <FishPage></FishPage>
         </el-tab-pane>
       </el-tabs>
     </el-scrollbar>
     <footer class="footer">
-      Copyright © {{ new Date().getFullYear() }} liku 
-      <span
-        >reference from  
-        <a href="https://gitee.com/GaoWeiQiang1996/go-home-vue" target="_blank">
-          gitee
-        </a></span
-      >
+      Copyright © {{ new Date().getFullYear() }} by liku
       <br />
-        <a href="https://github.com/yaoliqu/fisherman" target="_blank">
-          源代码
-        </a>
+      <a href="https://github.com/yaoliqu/fisherman" target="_blank">
+        源代码
+      </a>
     </footer>
   </div>
 </template>
@@ -31,8 +25,8 @@ export default {
   name: 'App',
   components: {
     FishPage: () => import('./components/fisherman/FishPage.vue'),
-    TodoList:() => import('./components/todoList/TodoList.vue'),
-    quickLink:() => import('./components/quickLink/quickLink.vue'),
+    TodoList: () => import('./components/todoList/TodoList.vue'),
+    quickLink: () => import('./components/quickLink/quickLink.vue'),
   },
   data() {
     return {
@@ -52,10 +46,10 @@ export default {
   overflow: hidden;
   .el-scrollbar {
     height: 100%;
-    :deep .el-scrollbar__view {
+   ::v-deep .el-scrollbar__view {
       padding: 8px;
     }
-  }
+  } 
   .footer {
     position: relative;
     top: 0;
@@ -72,7 +66,7 @@ export default {
     font-weight: normal;
     text-decoration: none;
     text-align: center;
-    a{
+    a {
       color: rgb(26 115 232);
     }
   }

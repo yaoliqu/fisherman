@@ -88,7 +88,7 @@ export default {
   margin: 4px auto;
   .input {
     width: 60%;
-    :deep .el-input-group__append,
+   ::v-deep .el-input-group__append,
     .el-input-group__prepend {
       background-color: #50adff;
       color: #fff;
@@ -119,29 +119,29 @@ export default {
         text-overflow: ellipsis;
       }
     }
-    :deep .el-transfer {
+   ::v-deep .el-transfer {
       font-size: 12px;
     }
-    :deep .el-transfer-panel .el-transfer-panel__header .el-checkbox .el-checkbox__label {
+   ::v-deep .el-transfer-panel .el-transfer-panel__header .el-checkbox .el-checkbox__label {
       font-size: 14px;
     }
-    :deep .el-transfer-panel__item.el-checkbox {
+   ::v-deep .el-transfer-panel__item.el-checkbox {
       width: 80%;
     }
-    :deep .el-transfer-panel {
+   ::v-deep .el-transfer-panel {
       width: 44%;
     }
-    :deep .el-transfer__buttons {
+   ::v-deep .el-transfer__buttons {
       padding: 0 4px;
     }
-    :deep .el-button + .el-button,
+   ::v-deep .el-button + .el-button,
     .el-checkbox.is-bordered + .el-checkbox.is-bordered {
       margin-left: 4px;
     }
-    :deep .el-transfer__button {
+   ::v-deep .el-transfer__button {
       padding: 4px;
     }
-    :deep .el-button {
+   ::v-deep .el-button {
       padding: 0;
       font-size: 12px;
     }

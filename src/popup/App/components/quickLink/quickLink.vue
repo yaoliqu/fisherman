@@ -62,8 +62,15 @@ export default {
         link: '',
       },
       rules: {
-        title: [{ required: true, message: '请输入', trigger: 'blur' }],
-        link: [{ required: true, message: '请输入', trigger: 'blur' }],
+        title: [{ required: true, message: '请输入', trigger: 'none' }],
+        link: [
+          { required: true, message: '请输入', trigger: 'none' },
+          {
+            pattern: /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/,
+            message: '这是什么鸡儿~',
+            trigger: 'none',
+          },
+        ],
       },
       linkData: JSON.parse(localStorage.getItem('linkData')) || [],
     }
@@ -86,7 +93,7 @@ export default {
       })
     },
     handleEdit(row) {
-       window.open(row.link, '_blank')
+      window.open(row.link, '_blank')
     },
     handleDelete(key) {
       this.linkData = this.linkData.filter((i) => i.key != key)
@@ -115,27 +122,30 @@ export default {
     justify-content: space-between;
     align-items: center;
     font-size: 12px !important;
-    :deep .el-form--inline .el-form-item {
+    ::v-deep .el-form--inline .el-form-item {
       margin: 0;
     }
-    :deep .el-form-item {
+    ::v-deep .el-form-item {
       margin: 0;
     }
-    :deep .el-form-item__label {
+    ::v-deep .el-form-item__label {
       font-size: 12px;
     }
-    :deep .el-form-item__content {
+    ::v-deep .el-form-item__content {
       font-size: 12px;
     }
-    :deep .el-input {
+    ::v-deep .el-input {
       width: 70%;
       font-size: 12px;
     }
-    :deep .el-input__inner {
+    ::v-deep .el-input__inner {
       font-size: 12px;
       line-height: 28px;
       height: 28px;
       padding: 0 8px;
+    }
+    ::v-deep .el-form-item__error {
+      z-index: 99;
     }
   }
 }
