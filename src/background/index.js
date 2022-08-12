@@ -1,7 +1,11 @@
 /*  global chrome */
 import moment from 'moment'
-import { getHourAndMinute, getIsWorkDay, getConfig } from '../popup/App/utils/utils'
-import { getEatList,getHomeList } from '../popup/App/utils/chickenSoup'
+import {
+  getHourAndMinute,
+  getIsWorkDay,
+  getConfig,
+} from '../popup/App/utils/utils'
+import { getEatList, getHomeList } from '../popup/App/utils/chickenSoup'
 
 //计时器列表
 let timer = []
@@ -48,7 +52,7 @@ function init() {
       chrome.notifications.create('', {
         iconUrl: 'assets/icon48.png',
         title: '关机！下班！',
-        message:getHomeList(),
+        message: getHomeList(),
         type: 'basic',
         requireInteraction: true,
         buttons: [{ title: '我知道了' }],
@@ -77,6 +81,8 @@ function init() {
 
 //执行一次初始化
 init()
+
+
 
 //监听页面通讯，在设置改变的时候，执行初始化
 chrome.runtime.onMessage.addListener((e) => {

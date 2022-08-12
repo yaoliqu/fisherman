@@ -12,7 +12,7 @@
   "permissions": ["storage", "notifications", "http://*/*", "https://*/*"],
   "background": {
     "scripts": ["js/background.js"],
-    "persistent": false 
+    "persistent": true 
   },
   "icons": {
     "16": "assets/icon16.png",
