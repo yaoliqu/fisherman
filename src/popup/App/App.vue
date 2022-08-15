@@ -6,7 +6,7 @@
           <TodoList />
           <quickLink />
         </el-tab-pane>
-        <el-tab-pane label="别来沾边" name="second">
+        <el-tab-pane label="快乐倒计时" name="second">
           <FishPage></FishPage>
         </el-tab-pane>
       </el-tabs>
@@ -46,10 +46,10 @@ export default {
   overflow: hidden;
   .el-scrollbar {
     height: 100%;
-   ::v-deep .el-scrollbar__view {
+    ::v-deep .el-scrollbar__view {
       padding: 8px;
     }
-  } 
+  }
   .footer {
     position: relative;
     top: 0;
