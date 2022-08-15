@@ -50,6 +50,19 @@
           </template>
         </el-table-column>
       </el-table>
+      <div class="outPut">
+        <download-excel
+          class="export-excel-wrapper"
+          :data="linkData"
+          :fields="json_fields"
+          name="快捷导航.xls"
+          v-if="linkData.length"
+        >
+          <el-button type="primary" size="mini" :disabled="!linkData.length"
+            >备份导出</el-button
+          >
+        </download-excel>
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +88,10 @@ export default {
         ],
       },
       linkData: JSON.parse(localStorage.getItem('linkData')) || [],
+      json_fields: {
+        标题: 'title',
+        链接: 'link',
+      },
     }
   },
 
@@ -149,6 +166,12 @@ export default {
     ::v-deep .el-form-item__error {
       z-index: 99;
     }
+  }
+  .outPut {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 </style>
