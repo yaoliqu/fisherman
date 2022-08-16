@@ -9,6 +9,9 @@
         <el-tab-pane label="快乐倒计时" name="second">
           <FishPage></FishPage>
         </el-tab-pane>
+        <el-tab-pane label="好无聊" name="three">
+          <GamePage></GamePage>
+        </el-tab-pane>
       </el-tabs>
     </el-scrollbar>
     <footer class="footer">
@@ -27,6 +30,7 @@ export default {
     FishPage: () => import('./components/fisherman/FishPage.vue'),
     TodoList: () => import('./components/todoList/TodoList.vue'),
     quickLink: () => import('./components/quickLink/quickLink.vue'),
+    GamePage: () => import('./components/GamePage/GamePage.vue'),
   },
   data() {
     return {
