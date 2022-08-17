@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div class="row" v-if="isWorkDay" style="margin-bottom:4px">
-      <el-alert  
-       title="【友情提示】"
-      :description="warming" 
-      type="warning" > </el-alert>
+    <div class="row" v-if="isWorkDay" style="margin-bottom: 4px">
+      <el-alert title="【友情提示】" :description="warming" type="warning">
+      </el-alert>
     </div>
     <div class="week-info">今天是星期{{ week }}，{{ chickenSoup }}</div>
     <div class="border-wrap">
@@ -44,6 +42,16 @@
         距离发工资还有<span> {{ payOff }} </span>天
       </div>
 
+      <div class="row" v-if="!isLastDayDone">
+        距离离职还有<span> {{ lastDay.days }} </span>天<span>
+          {{ lastDay.hours }} </span
+        >小时<span> {{ lastDay.minutes }} </span>分钟<span>
+          {{ lastDay.seconds }} </span
+        >秒
+      </div>
+      <div class="row" v-else>
+        <span> 恭喜你，重获新生~</span>
+      </div>
       <div class="flex row">
         <div>当前时间：{{ dateTime }}</div>
         <el-button size="mini" type="primary" @click="setClick">{{
@@ -72,6 +80,7 @@ export default {
   },
   data() {
     return {
+      isLastDayDone: false,
       week: '', //今天周几
       chickenSoup: getChickenSoup(), //一句毒鸡汤
       warming: getWarming(), //温馨提示
@@ -83,6 +92,8 @@ export default {
       holidayList: [], //节假日倒计时，因为有多个节假日，所以是个数组
 
       payOff: null, //距离发工资的天数
+
+      lastDay: null, //距离离职的天数
 
       dateTime: '', //当前时间
 
@@ -120,6 +131,7 @@ export default {
       this.setHoliday()
       this.setWeekend()
       this.setPayOff()
+      this.setLastDayOff()
     },
 
     //设置工作状态
@@ -245,6 +257,27 @@ export default {
 
       //和现在相差天数
       this.payOff = payOff.diff(now, 'days')
+    },
+
+    //设置距离离职天数
+    setLastDayOff() {
+      const [hour, minute] = getHourAndMinute(this.config.offWorkTime)
+      const now = new moment()
+      const lastDay = new moment(this.config.lastDay).format('YYYY-MM-DD')
+      const lastBeginDay = new moment(lastDay)
+      const lastBeginTime = new moment(
+        Object.assign(lastBeginDay.toObject(), { hour, minute })
+      )
+      let countDown = moment.duration(lastBeginTime.diff(now))._data
+      countDown.days = lastBeginTime.diff(now, 'days')
+      // item.countDown.months = 0
+      // item.countDown.years = 0
+      if (countDown.days >= 0) {
+        this.lastDay = countDown
+        this.isLastDayDone = false
+      } else {
+        this.isLastDayDone = true
+      }
     },
 
     //设置和保存

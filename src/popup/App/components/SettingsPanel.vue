@@ -72,11 +72,21 @@
           <el-radio :label="false">休息</el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="模式" prop="mode">
+      <!-- <el-form-item label="模式" prop="mode">
         <el-radio-group v-model="form.model.mode">
           <el-radio :label="true">正大光明</el-radio>
           <el-radio :label="false">隐藏</el-radio>
         </el-radio-group>
+      </el-form-item> -->
+      <el-form-item label="lastDay：" prop="lastDay">
+        <el-date-picker
+          v-model="form.model.lastDay"
+          type="date"
+          placeholder="选择日期"
+          :picker-options="expireTimeOPtion"
+          style="width: 160px"
+        >
+        </el-date-picker>
       </el-form-item>
     </el-form>
   </el-card>
@@ -99,7 +109,8 @@ export default {
           workType: null, //工作制，0双休 1大小周 2单休
           isSaturdayWork: false, //大小周时本周六是否上班 1是上班 2是休息
           payOffDay: null, //发薪日
-          mode: null,
+          lastDay: null, //辞职倒计时
+          // mode: null,
         },
         rules: {
           onWorkTime: [{ required: true, message: '请输入', trigger: 'none' }],
@@ -109,6 +120,11 @@ export default {
             { required: true, message: '请选择', trigger: 'none' },
           ],
           payOffDay: [{ required: true, message: '请输入', trigger: 'none' }],
+        },
+      },
+      expireTimeOPtion: {
+        disabledDate(time) {
+          return time.getTime() < Date.now()-8.64e7 //如果没有后面的-8.64e7就是不可以选择今天的
         },
       },
     }

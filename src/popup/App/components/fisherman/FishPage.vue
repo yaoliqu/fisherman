@@ -1,7 +1,8 @@
 <template>
   <div>
-    <VirtualPage v-if="!isDefault" @changeStatus="changeStatus" />
-    <RealPage v-else />
+    <!-- <VirtualPage v-if="!isDefault" @changeStatus="changeStatus" />
+    <RealPage v-else /> -->
+    <RealPage  />
   </div>
 </template>
 
@@ -10,7 +11,7 @@ import { getConfig } from '../../utils/utils'
 export default {
   components: {
     RealPage: () => import('./RealPage'),
-    VirtualPage: () => import('./VirtualPage'),
+    // VirtualPage: () => import('./VirtualPage'),
   },
   data() {
     return {
