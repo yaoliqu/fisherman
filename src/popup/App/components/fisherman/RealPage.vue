@@ -41,17 +41,19 @@
       <div class="row">
         距离发工资还有<span> {{ payOff }} </span>天
       </div>
+      <template v-if="config.lastDay">
+        <div class="row" v-if="!isLastDayDone">
+          距离离职还有<span> {{ lastDay.days }} </span>天<span>
+            {{ lastDay.hours }} </span
+          >小时<span> {{ lastDay.minutes }} </span>分钟<span>
+            {{ lastDay.seconds }} </span
+          >秒
+        </div>
+        <div class="row" v-else>
+          <span> 恭喜你，重获新生~</span>
+        </div>
+      </template>
 
-      <div class="row" v-if="!isLastDayDone">
-        距离离职还有<span> {{ lastDay.days }} </span>天<span>
-          {{ lastDay.hours }} </span
-        >小时<span> {{ lastDay.minutes }} </span>分钟<span>
-          {{ lastDay.seconds }} </span
-        >秒
-      </div>
-      <div class="row" v-else>
-        <span> 恭喜你，重获新生~</span>
-      </div>
       <div class="flex row">
         <div>当前时间：{{ dateTime }}</div>
         <el-button size="mini" type="primary" @click="setClick">{{
@@ -286,11 +288,6 @@ export default {
         await this.$refs.SettingsPanel.save()
       }
       this.setStatus = !this.setStatus
-    },
-
-    //跳转开源仓库
-    goGitee() {
-      window.open('https://gitee.com/GaoWeiQiang1996/go-home-vue')
     },
   },
 }
