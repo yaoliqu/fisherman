@@ -2,7 +2,7 @@
   <div id="app">
     <el-scrollbar wrap-style="overflow-x: hidden;margin-bottom:0">
       <el-tabs v-model="activeName">
-        <el-tab-pane label="生产工具" name="first">
+        <el-tab-pane label="摸鱼tools" name="first">
           <TodoList />
           <quickLink />
         </el-tab-pane>

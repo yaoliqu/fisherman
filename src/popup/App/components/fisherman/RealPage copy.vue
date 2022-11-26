@@ -1,11 +1,11 @@
-<!-- 单位 核酸 -->
+<!-- 单位 天 -->
 <template>
   <div>
     <div class="row" v-if="isWorkDay" style="margin-bottom: 4px">
       <el-alert title="【友情提示】" :description="warming" type="warning">
       </el-alert>
     </div>
-    <div class="week-info">今天是星期{{ week }};<span v-if="[1,2,3].indexOf(WorkStatus)!=-1">{{ chickenSoup }}</span></div>
+    <div class="week-info">今天是星期{{ week }}，{{ chickenSoup }}</div>
     <div class="border-wrap">
       <template v-if="isWorkDay">
         <div v-if="WorkStatus === 0" class="row">
@@ -25,16 +25,22 @@
       <div v-else class="row">今天不用上班，好好享受假期吧！</div>
 
       <div v-if="Object.keys(weekend).length" class="row">
-        距离周末还有<span> {{ weekend.days }} </span> 次核酸
+        距离周末还有<span> {{ weekend.days }} </span>天<span>
+          {{ weekend.hours }} </span
+        >小时<span> {{ weekend.minutes }} </span>分钟<span>
+          {{ weekend.seconds }} </span
+        >秒
       </div>
 
       <div v-for="item in holidayList" :key="item.restDay[0]" class="row">
         距离{{ item.name }}假期还有<span> {{ item.countDown.days }} </span
-        > 次核酸
+        >天<span> {{ item.countDown.hours }} </span>小时<span>
+          {{ item.countDown.minutes }} </span
+        >分钟<span> {{ item.countDown.seconds }} </span>秒
       </div>
 
       <div class="row">
-        距离发工资还有<span> {{ payOff }} </span> 次核酸
+        距离发工资还有<span> {{ payOff }} </span>天
       </div>
       <template v-if="config.lastDay">
         <div class="row" v-if="!isLastDayDone">
