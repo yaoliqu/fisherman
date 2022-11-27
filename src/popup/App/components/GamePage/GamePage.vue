@@ -1,3 +1,5 @@
 <template>
-  <iframe src="assets/game/index.html" width="100%" height="240"></iframe>
+<div>
+  <a href="https://www.baidu.com/" target="_blank">11</a>
+</div>
 </template>
